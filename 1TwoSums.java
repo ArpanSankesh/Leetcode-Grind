@@ -3,35 +3,34 @@ import java.util.Scanner;
 
 class Solution {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         // Read the size of the array
-        System.out.print("Enter the number of elements in the array: ");
-        int n = scanner.nextInt();
-
-        // Read the array elements
-        int[] nums = new int[n];
-        System.out.println("Enter the elements of the array:");
-        for (int i = 0; i < n; i++) {
-            nums[i] = scanner.nextInt();
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Read the size of the array
+            System.out.print("Enter the number of elements in the array: ");
+            int n = scanner.nextInt();
+            
+            // Read the array elements
+            int[] nums = new int[n];
+            System.out.println("Enter the elements of the array:");
+            for (int i = 0; i < n; i++) {
+                nums[i] = scanner.nextInt();
+            }
+            
+            // Read the target value
+            System.out.print("Enter the target value: ");
+            int target = scanner.nextInt();
+            
+            // Create an instance of Solution and get the result
+            Solution solution = new Solution();
+            int[] result = solution.twoSum(nums, target);
+            
+            // Print the result
+            if (result.length == 0) {
+                System.out.println("No two sum solution found.");
+            } else {
+                System.out.println("Indices of the two numbers are: [" + result[0] + ", " + result[1] + "]");
+            }
         }
-
-        // Read the target value
-        System.out.print("Enter the target value: ");
-        int target = scanner.nextInt();
-
-        // Create an instance of Solution and get the result
-        Solution solution = new Solution();
-        int[] result = solution.twoSum(nums, target);
-
-        // Print the result
-        if (result.length == 0) {
-            System.out.println("No two sum solution found.");
-        } else {
-            System.out.println("Indices of the two numbers are: [" + result[0] + ", " + result[1] + "]");
-        }
-
-        scanner.close();
     }
 
     public int[] twoSum(int[] nums, int target) {
