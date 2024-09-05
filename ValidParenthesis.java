@@ -5,22 +5,20 @@ import java.util.Stack;
 public class ValidParenthesis {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the string of Parenthesis '( )' '{ }' ''[ ] : ");
-        String s = sc.nextLine();
-
-        System.out.println("Your String : " + s);
-
-        Boolean result = isValid(s);
-
-        if (result) {
-            System.out.print("Yess! it is a Valid Parenthesis");
-        } else {
-            System.out.print("NO! it is NOT Valid Parenthesis");
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.print("Enter the string of Parenthesis '( )' '{ }' ''[ ] : ");
+            String s = sc.nextLine();
+            
+            System.out.println("Your String : " + s);
+            
+            Boolean result = isValid(s);
+            
+            if (result) {
+                System.out.print("Yess! it is a Valid Parenthesis");
+            } else {
+                System.out.print("NO! it is NOT Valid Parenthesis");
+            }
         }
-        
-        sc.close();
     }
 
     
