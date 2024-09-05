@@ -2,21 +2,20 @@ import java.util.Scanner;
 
 public class PalindromeNumbers {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        PalindromeNumbers solution = new PalindromeNumbers();
-
-        System.out.print("Enter an integer to check if it is a palindrome: ");
-        int x = scanner.nextInt();
-
-        boolean isPalindrome = solution.isPalindrome(x);
-
-        if (isPalindrome) {
-            System.out.println(x + " is a palindrome.");
-        } else {
-            System.out.println(x + " is not a palindrome.");
+        try (Scanner scanner = new Scanner(System.in)) {
+            PalindromeNumbers solution = new PalindromeNumbers();
+            
+            System.out.print("Enter an integer to check if it is a palindrome: ");
+            int x = scanner.nextInt();
+            
+            boolean isPalindrome = solution.isPalindrome(x);
+            
+            if (isPalindrome) {
+                System.out.println(x + " is a palindrome.");
+            } else {
+                System.out.println(x + " is not a palindrome.");
+            }
         }
-
-        scanner.close();
     }
 
     public boolean isPalindrome(int x) {
