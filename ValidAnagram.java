@@ -23,22 +23,21 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the first string: ");
-        String s = scanner.nextLine();
-        
-        System.out.print("Enter the second string: ");
-        String t = scanner.nextLine();
-        
-        Solution solution = new Solution();
-        boolean result = solution.isAnagram(s, t);
-
-        if (result) {
-            System.out.println("The strings are anagrams.");
-        } else {
-            System.out.println("The strings are not anagrams.");
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter the first string: ");
+            String s = scanner.nextLine();
+            
+            System.out.print("Enter the second string: ");
+            String t = scanner.nextLine();
+            
+            Solution solution = new Solution();
+            boolean result = solution.isAnagram(s, t);
+            
+            if (result) {
+                System.out.println("The strings are anagrams.");
+            } else {
+                System.out.println("The strings are not anagrams.");
+            }
         }
-        
-        scanner.close();
     }
 }
