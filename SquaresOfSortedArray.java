@@ -24,21 +24,21 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Enter the number of elements in the array:");
+            int n = scanner.nextInt();
+            int[] nums = new int[n];
 
-        System.out.println("Enter the number of elements in the array:");
-        int n = scanner.nextInt();
-        int[] nums = new int[n];
+            System.out.println("Enter the elements of the array:");
+            for (int i = 0; i < n; i++) {
+                nums[i] = scanner.nextInt();
+            }
 
-        System.out.println("Enter the elements of the array:");
-        for (int i = 0; i < n; i++) {
-            nums[i] = scanner.nextInt();
+            Solution solution = new Solution();
+            int[] sortedSquares = solution.sortedSquares(nums);
+
+            System.out.println("Sorted squares of the array:");
+            System.out.println(Arrays.toString(sortedSquares));
         }
-
-        Solution solution = new Solution();
-        int[] sortedSquares = solution.sortedSquares(nums);
-
-        System.out.println("Sorted squares of the array:");
-        System.out.println(Arrays.toString(sortedSquares));
     }
 }
