@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class LongestPalindrome {
     public int longestPalindrome(String s) {
@@ -32,13 +33,17 @@ public class LongestPalindrome {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         LongestPalindrome lp = new LongestPalindrome();
         
-        // Example cases
-        String s1 = "abccccdd";
-        System.out.println(lp.longestPalindrome(s1));  // Output: 7
+        // Prompt the user for input
+        System.out.print("Enter a string: ");
+        String userInput = scanner.nextLine();  // Read user input
         
-        String s2 = "a";
-        System.out.println(lp.longestPalindrome(s2));  // Output: 1
+        // Calculate and display the longest palindrome length
+        int result = lp.longestPalindrome(userInput);
+        System.out.println("The length of the longest palindrome that can be built is: " + result);
+        
+        scanner.close(); // Close the scanner
     }
 }
