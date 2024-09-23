@@ -18,27 +18,26 @@ class ransomeNote {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
         // Get ransomNote input from user
-        System.out.print("Enter the ransom note: ");
-        String ransomNote = scanner.nextLine();
-
-        // Get magazine input from user
-        System.out.print("Enter the magazine text: ");
-        String magazine = scanner.nextLine();
-
-        // Create an instance of the ransomeNote class
-        ransomeNote solution = new ransomeNote();
-
-        // Call the canConstruct method and display the result
-        boolean result = solution.canConstruct(ransomNote, magazine);
-        if (result) {
-            System.out.println("The ransom note can be constructed from the magazine.");
-        } else {
-            System.out.println("The ransom note cannot be constructed from the magazine.");
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Get ransomNote input from user
+            System.out.print("Enter the ransom note: ");
+            String ransomNote = scanner.nextLine();
+            
+            // Get magazine input from user
+            System.out.print("Enter the magazine text: ");
+            String magazine = scanner.nextLine();
+            
+            // Create an instance of the ransomeNote class
+            ransomeNote solution = new ransomeNote();
+            
+            // Call the canConstruct method and display the result
+            boolean result = solution.canConstruct(ransomNote, magazine);
+            if (result) {
+                System.out.println("The ransom note can be constructed from the magazine.");
+            } else {
+                System.out.println("The ransom note cannot be constructed from the magazine.");
+            }
         }
-
-        scanner.close();
     }
 }
