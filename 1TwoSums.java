@@ -45,4 +45,8 @@ class Solution {
         }
         return new int[] {}; // No solution found
     }
+
+    boolean canConstruct(String ransomNote, String magazine) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

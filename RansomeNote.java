@@ -28,8 +28,8 @@ class ransomeNote {
         System.out.print("Enter the magazine text: ");
         String magazine = scanner.nextLine();
 
-        // Create an instance of the Solution class
-        Solution solution = new Solution();
+        // Create an instance of the ransomeNote class
+        ransomeNote solution = new ransomeNote();
 
         // Call the canConstruct method and display the result
         boolean result = solution.canConstruct(ransomNote, magazine);
